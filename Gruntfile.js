@@ -1,6 +1,6 @@
 /* global module:false */
 module.exports = function(grunt) {
-	var port = grunt.option('port') || 8000;
+
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -11,12 +11,13 @@ module.exports = function(grunt) {
 				' * http://lab.hakim.se/reveal-js\n' +
 				' * MIT licensed\n' +
 				' *\n' +
-				' * Copyright (C) 2015 Hakim El Hattab, http://hakim.se\n' +
+				' * Copyright (C) 2013 Hakim El Hattab, http://hakim.se\n' +
 				' */'
 		},
 
+		// Tests will be added soon
 		qunit: {
-			files: [ 'test/*.html' ]
+			files: [ 'test/**/*.html' ]
 		},
 
 		uglify: {
@@ -29,39 +30,25 @@ module.exports = function(grunt) {
 			}
 		},
 
-		sass: {
-			core: {
+		cssmin: {
+			compress: {
 				files: {
-					'css/reveal.css': 'css/reveal.scss',
+					'css/reveal.min.css': [ 'css/reveal.css' ]
 				}
-			},
-			themes: {
+			}
+		},
+
+		sass: {
+			main: {
 				files: {
-					'css/theme/black.css': 'css/theme/source/black.scss',
-					'css/theme/white.css': 'css/theme/source/white.scss',
-					'css/theme/league.css': 'css/theme/source/league.scss',
+					'css/theme/default.css': 'css/theme/source/default.scss',
 					'css/theme/beige.css': 'css/theme/source/beige.scss',
 					'css/theme/night.css': 'css/theme/source/night.scss',
 					'css/theme/serif.css': 'css/theme/source/serif.scss',
 					'css/theme/simple.css': 'css/theme/source/simple.scss',
 					'css/theme/sky.css': 'css/theme/source/sky.scss',
 					'css/theme/moon.css': 'css/theme/source/moon.scss',
-					'css/theme/solarized.css': 'css/theme/source/solarized.scss',
-					'css/theme/blood.css': 'css/theme/source/blood.scss'
-				}
-			}
-		},
-
-		autoprefixer: {
-			dist: {
-				src: 'css/reveal.css'
-			}
-		},
-
-		cssmin: {
-			compress: {
-				files: {
-					'css/reveal.min.css': [ 'css/reveal.css' ]
+					'css/theme/solarized.css': 'css/theme/source/solarized.scss'
 				}
 			}
 		},
@@ -82,10 +69,7 @@ module.exports = function(grunt) {
 				globals: {
 					head: false,
 					module: false,
-					console: false,
-					unescape: false,
-					define: false,
-					exports: false
+					console: false
 				}
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
@@ -94,10 +78,8 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
-					port: port,
-					base: '.',
-                    livereload: true,
-                    open: true
+					port: 8000,
+					base: '.'
 				}
 			}
 		},
@@ -114,61 +96,37 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-            options: {
-                livereload: true
-            },
-			js: {
-				files: [ 'Gruntfile.js', 'js/reveal.js' ],
-				tasks: 'js'
+			main: {
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				tasks: 'default'
 			},
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-				tasks: 'css-themes'
-			},
-			css: {
-				files: [ 'css/reveal.scss' ],
-				tasks: 'css-core'
-			},
-            html: {
-                files: [ 'index.html']
-            }
+				tasks: 'themes'
+			}
 		}
 
 	});
 
 	// Dependencies
-	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
-	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'css', 'js' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
 
-	// JS task
-	grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
-
-	// Theme CSS
-	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
-
-	// Core framework CSS
-	grunt.registerTask( 'css-core', [ 'sass:core', 'autoprefixer', 'cssmin' ] );
-
-	// All CSS
-	grunt.registerTask( 'css', [ 'sass', 'autoprefixer', 'cssmin' ] );
+	// Theme task
+	grunt.registerTask( 'themes', [ 'sass' ] );
 
 	// Package presentation to archive
 	grunt.registerTask( 'package', [ 'default', 'zip' ] );
 
 	// Serve presentation locally
 	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
-
-	// Run tests
-	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
 
 };

@@ -1,1 +1,1 @@
-web: node plugin/multiplex
+web: node web.js
