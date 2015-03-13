@@ -1,0 +1,329 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: Open Sans;
+	font-weight: 200;
+	background: #ecf0f1;
+}
+.container{
+	width: 100%;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+header{
+	background: #e73c5c;
+	color: #ffffff;
+}
+header h2{
+	float: left;
+	font-weight: 400;
+}
+header nav{
+	float: right;
+	position: relative;
+}
+header ul{
+	margin: 25px 0 0;
+}
+header li{
+	display: inline-block;
+	margin-left: 40px;
+}
+header a{
+	color: inherit;
+	text-decoration: none;
+}
+
+
+
+
+
+.intro{
+	background: transparent url('../images/bg.jpg') no-repeat center center;
+	background-size: cover;
+	height: 55%;
+	position: relative;
+	min-height: 500px;
+}
+.intro article{
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	color: #ffffff;
+	bottom: 60px;
+	text-align: center;
+}
+.intro h1{
+	font-size: 26px;
+	font-weight: 200;
+}
+.intro button{
+	background: #dd41f0;
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	padding: 15px 50px;
+	font-size: 30px;
+	margin: 20px 0 20px 0;
+	outline: none;
+	border-bottom: 5px solid rgb(170, 29, 188);
+	box-sizing: padding-box;	
+}
+.intro span{
+	display: block;
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-top: 5px;
+	font-weight: 100;
+}
+
+
+
+
+
+.music-list{
+	padding: 0;
+	margin: 0 -15px 0 -15px;
+	
+}
+.music-list li{
+	height: auto;
+	margin: 0 0 40px;
+	list-style-type: none;
+}
+.music-list .column{
+	width: 33.33%;
+	float: left;
+	padding: 0 15px;
+	box-sizing: border-box;	
+	transition: all, 1s;
+}
+.music-list .cover{
+	min-height: 220px;
+	height: 20%;
+	overflow: hidden;
+}
+.music-list .cover img{
+	height: auto;
+	width: 100%
+}
+.music-list article{
+	padding: 15px;
+	background: #ffffff;
+	height: 150px;
+	position: relative;
+}
+.music-list h4{
+	line-height: 1.8em;
+	margin: 0 0 5px;
+}
+.music-list a{
+	font-size: 22px;
+	font-weight: 400;
+	text-decoration: none;
+	color: #444444;
+}
+.music-list span{
+	color: #666666;
+	font-size: 16px;
+}
+.music-list .play{
+	font-weight: 400;
+	font-size: 18px;
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+}
+.music-list .play i{
+	font-size: 30px;
+	position: relative;
+	top: 3px;
+	margin-right: 4px;
+	color: rgb(231, 60, 92);
+}
+
+
+footer{
+	background: #e73c5c;
+	color: #ffffff;
+	text-align: center;
+}
+
+
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+/*phones*/
+@media only screen and (min-width : 0){
+	body{
+		font-size: 12px;
+	}
+	.container{
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	header .container{
+		padding: 0 0 0 20px;
+	}
+	.intro{
+		min-height: 400px;
+	}
+	.intro article{
+		bottom: 20px;
+	}
+	.intro h1{
+		font-size: 20px;
+		padding: 0 10px;
+	}
+	.intro br{
+		display: none;
+	}
+	nav button{
+		display: block;
+		font-size: 30px;
+		background: none;
+		border: 0;
+		padding: 12px 15px;
+		outline: none;
+		color: #ffffff;
+		cursor: pointer;
+		z-index: 3;
+		position: relative;
+	}
+	nav button:hover{
+		background: #F0526F;
+	}
+	nav div{
+	    position: fixed;
+	    right: 0;
+	    top: 0;
+	    height: 100%;
+	    width: 100%;
+	    background: rgba(0,0,0,0.5);
+	    z-index: 2;
+		opacity: 0;
+	}
+	nav ul{
+	    width: 0;
+	    position: absolute;
+	    background: #e73c5c;
+	    top: 0;
+	    right: 0;
+	    height: 100%;
+	    margin: 0;
+	    padding: 65px 0px 0;
+	}
+	nav li{
+		display: block;
+		margin: 0;
+	}
+	nav li a{
+		font-size: 16px;
+		padding: 10px 15px;
+		margin: 0;
+		display: block;
+		text-align: right;
+	}
+	nav li a:hover{
+		background: orange;
+	}
+	.music-list .column{
+		width: 100%;
+	}
+	.music-list li{
+		margin-bottom: 20px;
+	}
+}
+/*pads*/
+@media only screen and (min-width : 768px){
+	body{
+		font-size: 16px;
+	}
+	header .container{
+		padding: 0 20px;
+	}
+	nav div{
+		position: initial;
+		height: auto;
+		width: auto;
+		opacity: 1;
+	}
+	nav ul{
+		position: static;
+		height: auto;
+		padding: 0;
+		margin: 18px 0 0;
+		width: auto;
+	}
+	nav li{
+		display: inline-block;
+	}
+	nav button{
+		display: none;
+	}
+	nav div{
+		position: static;
+	}	
+	.intro{
+		min-height: 500px;
+	}
+	.intro article{
+		bottom: 60px;
+	}	
+	.intro h1{
+		font-size: 30px;
+		padding: 0 10px;
+	}
+	.intro br{
+		display: block;
+	}	
+	.music-list .column{
+		width: 33.33%;
+	}	
+	.music-list li{
+		margin-bottom: 40px;
+	}
+}
+/*desktop*/
+@media only screen and (min-width : 1224px) {
+	.container{
+		width: 100%;
+		max-width: 80%;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+}
+/*large screen*/
+@media only screen and (min-width : 1824px) {
+	.container{
+		width: 100%;
+		max-width: 90%;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}	
+	.intro h1{
+		font-size: 35px;
+		padding: 0 10px;
+	}	
+	.music-list .column{
+		width: 20%;
+	}
+}
+
+
+
+
+

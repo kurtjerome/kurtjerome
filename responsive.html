@@ -1,0 +1,154 @@
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+</head>
+<body>
+	<div class="cherry-beats">
+		<header>
+			<div class="container clearfix">
+				<h2>
+					<strong>cherry</strong>beats
+				</h2>
+				<nav>
+					<button><i class="fa fa-bars"></i></button>
+					<div>
+						<ul>
+							<li><a href="">PLAYLISTS</a></li>
+							<li><a href="">STORE</a></li>
+							<li><a href="">LOGIN</a></li>
+							<li><a href=""><strong>REGISTER</strong></a></li>	
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<div class="intro">
+			<article>
+				<h1>play the moments. pause the memories.<br/>stop the pain. rewind the happiness</h2>
+				<button>
+					Join the Party!
+					<span>SIGN UP HERE</span>
+				</button>
+			<article>
+		</div>
+		<div class="body">
+			<div class="container">
+				<h3>POPULAR</h3>
+				<ul class="clearfix music-list">
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-1.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Like a Gumamela</a></h4>
+								<span>HIBBY METAL</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Read Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-2.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Give Me More</a></h4>
+								<span>THE INCRAUDIBLES</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-3.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">The Space Between Me And The Microphone</a></h4>
+								<span>MIKE EATER</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-4.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Lonesome Intensity</a></h4>
+								<span>DEAN GUERERO</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-1.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Classic Lunacy</a></h4>
+								<span>ANGELA WELLS</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-1.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Guilty Axe</a></h4>
+								<span>SUNDRA</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-1.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Classic Lunacy</a></h4>
+								<span>ANGELA WELLS</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>
+					<li class="column four">
+						<div>
+							<div class="cover" style="background-image: url(images/alb-1.jpg); background-position: center center; background-size: cover;"></div>
+							<article>
+								<h4><a href="">Guilty Axe</a></h4>
+								<span>SUNDRA</span>
+								<a class="play" href=""><i class="fa fa-play-circle-o"></i> Play Song</a>
+							</article>
+						</div>
+					</li>					
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<p>All Rights Reserved. &copy 2015.</p>
+			</div>
+		</footer>
+	</div>
+	<script>
+	
+	$('nav button').on('click',function(){
+		if($('nav div').css('opacity') == 0){
+			$('nav div').animate({
+				opacity:1
+			},100,function(){
+					$('nav ul').animate({
+						width: 250
+					},200);
+				});
+		}
+		else{
+			$('nav ul').animate({
+				width:0
+			},200,function(){
+					$('nav div').animate({
+						opacity: 0
+					},100);
+				});
+		}
+	});
+	</script>
+</body>
+</html>
