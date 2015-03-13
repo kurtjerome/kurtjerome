@@ -18,6 +18,10 @@ h1 {
 }
 
 @media only screen and (orientation: portrait){
+	body {
+		background: #BD4651; /* RED */
+	}
+
 	h1:before {
 		font-size: 80px;
 		content: 'Portrait';
@@ -25,6 +29,10 @@ h1 {
 }
 
 @media only screen and (orientation: landscape){
+	body {
+		background: #318CE7; /* BLUE */
+	}
+
 	h1:before {
 		font-size: 110px;
 		content: 'Landscape';
