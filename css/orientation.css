@@ -23,7 +23,7 @@ h1 {
 	}
 
 	h1:before {
-		font-size: 80px;
+		font-size: 70px;
 		content: 'Portrait';
 	}
 }
@@ -34,7 +34,7 @@ h1 {
 	}
 
 	h1:before {
-		font-size: 110px;
+		font-size: 90px;
 		content: 'Landscape';
 	}
 }
