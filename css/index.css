@@ -4,6 +4,7 @@ body {
 	height: 100%;
 	margin: 0;
 	background: #3B444B;
+    font-family: 'Rubik', sans-serif;
 }
 
 .row {
@@ -13,7 +14,6 @@ body {
 h1 {
 	text-align: center;
 	color: #fff;
-	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 100px;
 	margin: 0;
